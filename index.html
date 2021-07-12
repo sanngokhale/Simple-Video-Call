@@ -1,0 +1,64 @@
+<html>
+
+    <head>
+        <title>Sanmeet</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    
+    <body>
+   
+        <h3 class="title">Join your meetings from Microsoft Teams</h3>
+        <p id="notification" hidden></p>
+        <div class="entry-modal" id="entry-modal">
+            <p>Create or Join Meeting</p>
+            <input id="room-input" class="room-input" placeholder="Enter Room ID : ">
+            <input id="User-name" class="User-name" placeholder="Enter your name : ">
+            <div>
+                <button onclick="createRoom()">Create Room</button>
+                <button onclick="joinRoom()">Join Room</button>
+            </div>
+        </div>
+        <div id="mychatbox" class='col-md-3' style="display:none;z-index:9999;position:absolute; left:2px; top:50px; min-height:500px;max-height:500px;  background-color:silver;color:black">
+        &nbsp;abcd<br>
+            <div class="chatbody" style="display:block">
+				<div id="chatbox" class="incoming"><p></p>
+				</div>
+				<div class="typing">
+					<div class="bubble">
+						<div class="ellipsis dot_1"></div>
+						<div class="ellipsis dot_2"></div>
+						<div class="ellipsis dot_3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="foot" style="display:block">
+				<input id="usermsg" type="text" class="msg" placeholder="Type a message..." />
+				<button type="submit" onclick="sendmessage()"><i class="fas fa-paper-plane"></i></button>
+			</div>
+        </div>
+        <div id="meet-area" class="meet-area" style="display:none" >
+            <!-- Remote Video Element-->
+            <video id="remote-video"></video>
+
+            <!-- Local Video Element-->
+            <video id="local-video"></video>
+            <div class = "Call-on-ction">
+                <button Onclick="muteVideo()"> <span id="sanvideospan" class="badge  btn-Inverse"> <i id="sanvideo" class="fa fa-video-camera" style="left: 100px"></i></span></button> <span>
+                <button Onclick="muteAudio()"><span class="badge  btn-Inverse"> <i id="sanmic" class="fa fa-microphone" style="left: 150px"></i></span> </button>
+                <button Onclick="showchat()"><span class="badge  btn-Inverse"> <i id="sanchat" class="far fa-comment-dots"></i></span> </button>
+                
+            </div> 
+            <!--10-Jul-2021-->
+            
+            <!--10-Jul-2021-->
+        </div>
+        
+    </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+
+</html>
